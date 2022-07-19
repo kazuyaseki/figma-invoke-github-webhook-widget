@@ -1,0 +1,19 @@
+<script>
+  window.onmessage = (event) => {
+    if (event.data.pluginMessage.message === "sync-github") {
+      const invokeWebhookUrl =
+        "https://api.github.com/repos/{YOUR_ORG_NAME}/{YOUR_REPO_NAME}/dispatches";
+      const githubPAT = ""; // set your GitHub access token
+
+      fetch(invokeWebhookUrl, {
+        method: "POST",
+        body: `{"event_type": "your-webhook-title"}`,
+        headers: {
+          Authorization: "token " + githubPAT,
+        },
+      }).then(() => {
+        parent.postMessage({ pluginMessage: { type: "close-plugin" } }, "*");
+      });
+    }
+  };
+</script>

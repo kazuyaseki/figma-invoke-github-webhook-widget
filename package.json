@@ -1,0 +1,17 @@
+{
+  "name": "SyncIcons",
+  "version": "1.0.0",
+  "description": "Your Figma widget",
+  "main": "code.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:watch": "tsc -p tsconfig.json --watch"
+  },
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "@figma/plugin-typings": "*",
+    "@figma/widget-typings": "*",
+    "typescript": "*"
+  }
+}
